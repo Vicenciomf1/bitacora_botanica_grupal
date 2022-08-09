@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitacora_botanica</title>
+    <link width="40" height="40"  rel="shortcut icon" href="../static/logo/logo_small_icon_only_inverted.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',  filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <h3  class="text-center"> <a class="navbar-brand" href="#">
+            <img src="../../static/logo/logo_small_icon_only_inverted.png" width="40" height="40" alt="">
+          </a> Bienvenido : {{user.first_name}} {{user.last_name}}, </h3>
+        <a href="/logout" class="btn btn-info">Salir</a>
+    </nav>
+    <div>
+        <center>
+        <img class="logo" name="logo" src="../../static/logo/logo_small.png"></img>
+        </center>
+    </div><br><br>
+    <form action="/update/bitacora_botanica" method="post" class="col-7 p-5 my-3 bg-dark text-light mx-auto">
+        <h2 class="text-primary">Editar Especie</h2><br>
+        {% with messages = get_flashed_messages(category_filter=['bitacora_botanica']) %}
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Error al ingresar el texto</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="d-flex justify-content-between col-11">
+            <input type="hidden" name="id" value={{edit.id}}>
+            <div class="col-11">
+                <div class="form-group">
+                    <label for="name">Especie:</label>
+                    <input type="text" name="name" class="form-control" value="{{edit.name}}">
+                </div>
+                <div class="form-group">
+                    <label for="Familia">Familia:</label>
+                    <input name="Familia"  cols="30" rows="5" class="form-control" value="{{edit.Familia}}">
+                </div>
+                <div class="form-group">
+                    <label for="Variedad">Variedad:</label>
+                    <input name="Variedad"  cols="30" rows="5" class="form-control" value="{{edit.Variedad}}">
+                </div>
+                <div class="form-group">
+                    <label for="date_made">Fecha de Clasificacion:</label>
+                    <input type="date" name="date_made" value="{{edit.date_made.strftime('%Y-%m-%d')}}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lugarobservado">Lugar observado:</label>
+                    <input name="lugarobservado"  cols="30" rows="5" value="{{edit.lugarobservado}}" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="cultivo">Cultivo:</label>
+                    <textarea name="cultivo"  cols="10" rows="5" value="{{edit.cultivo}}"  class="form-control" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="bibliografia">Bibliografia:</label>
+                    <textarea name="bibliografia"  cols="10" rows="5" value="{{edit.bibliografia}}" class="form-control" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripcion:</label>
+                    <textarea name="description"  cols="40" rows="5" value="{{edit.description}}" class="form-control" ></textarea>
+                </div>
+                <br>
+                <input type="submit" value="Aceptar" class="btn btn-primary">
+            </div>
+        </div>
+        
+    </form><br><br>
+    <div>
+        <footer >
+          <ul class="nav justify-content-center border-bottom bg-light pb-4 mb-0">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+          </ul>
+          <p class="text-center text-muted"><img src="../static/logo/logo_small_icon_only.png" width="40" height="40" alt=""> &copy; 2022 Por Alex Arce, Ing.Agronomo</p>
+        </footer>
+    </div>
+</body>
+</html>
