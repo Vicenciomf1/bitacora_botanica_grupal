@@ -79,6 +79,7 @@ def show_bitacora_botanica(id):
     return render_template("show_bitacora_botanica.html", bitacora_botanica= Bitacora_botanica.get_one(data),user=User.get_by_id(user_data))
 
 @app.route('/destroy/bitacora_botanica/<int:id>')
+
 def destroy_bitacora_botanica(id):
     if 'user_id' not in session:
         return redirect('/logout')
