@@ -80,6 +80,8 @@ def show_bitacora_botanica(id):
 
 @app.route('/destroy/bitacora_botanica/<int:id>')
 
+
+
 def destroy_bitacora_botanica(id):
     if 'user_id' not in session:
         return redirect('/logout')
