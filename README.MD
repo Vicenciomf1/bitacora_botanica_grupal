@@ -33,11 +33,11 @@ La bitácora de trabajo es un cuaderno en el cual las personas realizan anotacio
 
 --> Intro Pitch
 <img src="./flask_app/static/README/bitacora botanica1.png" alt="My cool logo"/>
---> Intro Pitch
+--> Login
 <img src="./flask_app/static/README/bitacora botanica2.png" alt="My cool logo"/>
---> Intro Pitch
+--> Motor de Busqueda de las especies
 <img src="./flask_app/static/README/bitacora botanica3.png" alt="My cool logo"/>
---> Intro Pitch
+--> Especies y Atajos 
 <img src="./flask_app/static/README/bitacora botanica4.png" alt="My cool logo"/>
 
 
