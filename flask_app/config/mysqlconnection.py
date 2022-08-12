@@ -2,7 +2,7 @@ import pymysql.cursors
 
 class MySQLConnection:
     def __init__(self, db):
-        connection = pymysql.connect(host = 'pruebasestudiando.mysql.database.azure.com',
+        connection = pymysql.connect(host = 'botanicaserver.mysql.database.azure.com',
                                     user = 'codingdojogrupal@botanicaserver',
                                     password = 'DKrH@!HcS78Y83a@',
                                     db = 'biitacora_botanica',
