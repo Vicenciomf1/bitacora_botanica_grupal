@@ -8,7 +8,8 @@ class MySQLConnection:
                                     db = db,
                                     charset = 'utf8mb4',
                                     cursorclass = pymysql.cursors.DictCursor,
-                                    autocommit = True)
+                                    autocommit = True,
+                                    ssl={'ca': '/home/site/wwwroot/BaltimoreCyberTrustRoot.crt.pem'})
         self.connection = connection
     def query_db(self, query, data=None):
         with self.connection.cursor() as cursor:
